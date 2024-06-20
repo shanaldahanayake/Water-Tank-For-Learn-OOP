@@ -95,15 +95,23 @@ class WatarTankWindow extends JFrame{
                 splitterWindow.setSplitterLabel(waterLevel);
             }
         });
-
-        this.alarmWindow= new AlarmWindow();
-        this.displayWindow=new DisplayWindow();
-        this.splitterWindow=new SplitterWindow();
+    }
+    public void setDisplayWindow(DisplayWindow displayWindow){
+        this.displayWindow= displayWindow;
+    }
+    public void setAlarmWindow(AlarmWindow alarmWindow){
+        this.alarmWindow= alarmWindow;
+    }
+    public void setSplitterWindow(SplitterWindow splitterWindow){
+        this.splitterWindow= splitterWindow;
     }
 }
 
 class Demo{
     public static void main(String args[]){
-        new WatarTankWindow();
+        WatarTankWindow wt=new WatarTankWindow();
+        wt.setDisplayWindow(new DisplayWindow());
+        wt.setAlarmWindow(new AlarmWindow());
+        wt.setSplitterWindow(new SplitterWindow());
     }
 }
