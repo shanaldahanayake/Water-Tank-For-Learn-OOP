@@ -3,14 +3,11 @@ import java.awt.*;
 import javax.swing.event.*;
 import java.awt.event.*;
 
-class WaterLevelObserver extends JFrame{
-    public void update(int waterLevel){
-
-    }
-
+interface WaterLevelObserver{
+    public void update(int waterLevel);
 }
 
-class DisplayWindow extends WaterLevelObserver{
+class DisplayWindow extends JFrame implements WaterLevelObserver{
     private JLabel displayLabel;
 
     DisplayWindow(){
@@ -31,7 +28,7 @@ class DisplayWindow extends WaterLevelObserver{
 
 }
 
-class AlarmWindow extends WaterLevelObserver{
+class AlarmWindow extends JFrame implements WaterLevelObserver{
     private JLabel alarmLabel;
 
     AlarmWindow(){
@@ -53,7 +50,7 @@ class AlarmWindow extends WaterLevelObserver{
 
 }
 
-class SplitterWindow extends WaterLevelObserver{
+class SplitterWindow extends JFrame implements WaterLevelObserver{
     private JLabel splitterLabel;
 
     SplitterWindow(){
@@ -74,7 +71,7 @@ class SplitterWindow extends WaterLevelObserver{
     }
 }
 
-class WatarTankWindow extends WaterLevelObserver{
+class WatarTankWindow extends JFrame{
     private JSlider waterLevelSlider;
     private WaterTankController waterTankController;
    
